@@ -32,7 +32,7 @@ class BookResource(Resource):
 class BookListResource(Resource):
     def get(self):
         return books
-    
+
 class Last_id(Resource):
     def __init__(self, num):
         self.num = num
