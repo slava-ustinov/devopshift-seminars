@@ -32,9 +32,16 @@ class BookResource(Resource):
 class BookListResource(Resource):
     def get(self):
         return books
+    
+class Last_id(Resource):
+    def __init__(self, num):
+        self.num = num
+
+    def last_id(self):
+        return self.num
 
     def post(self):
-        global LAST_ID
+        LAST_ID = Last_id(33)
         LAST_ID += 1
         data = request.json
         book = {
